@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: greenhouse-service
+  name: demo-service
 spec:
   selector:
     app: pipe-demo
@@ -14,18 +14,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-greenhouse
+  name: pipe-demo
   labels:
-    app: greenhouse
+    app: pipe-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: greenhouse
+      app: pipe-demo
   template:
     metadata:
       labels:
-        app: greenhouse
+        app: pipe-demo
     spec:
       imagePullSecrets:
       - name: pipeline-docker-registry
